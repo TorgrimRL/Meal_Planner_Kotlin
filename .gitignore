@@ -1,0 +1,19 @@
+# course config files
+*.yaml
+
+# gradle
+.gradle/
+build
+
+
+# idea config
+.idea
+
+# old stages
+/Meal Planner (Kotlin)/*
+!/Meal Planner (Kotlin)/task/
+/Meal Planner (Kotlin)/task/*
+!/Meal Planner (Kotlin)/task/src
+!/Meal Planner (Kotlin)/task/plan.txt
+!/Meal Planner (Kotlin)/task/exit
+!/Meal Planner (Kotlin)/task/meals.db
