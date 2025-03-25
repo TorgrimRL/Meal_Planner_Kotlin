@@ -1,6 +1,6 @@
 # Meal Planner (Kotlin)
 
-Meal Planner er et kommandolinjebasert Kotlin-prosjekt utviklet for å bestå Hyperskills interne tester. Prosjektet demonstrerer hvordan man kan bruke SQL og DAO-mønsteret i Kotlin for å håndtere datatilgang til en SQLite-database, samtidig som det opprettholder en tydelig separasjon av ansvar mellom brukergrensesnitt (Menu), forretningslogikk (MealPlanner) og datatilgang (DAO).
+Meal Planner er et kommandolinjebasert Kotlin-prosjekt utviklet for å bestå for få jobbet med databaser i Kotlin. Prosjektet har lært meg hvordan man kan bruke SQL og DAO-mønsteret i Kotlin for å håndtere datatilgang til en SQLite-database, samtidig man opprettholder en tydelig separasjon av ansvar mellom brukergrensesnitt (Menu), forretningslogikk (MealPlanner) og datatilgang (DAO).
 
 ## Designvalg
 
@@ -14,7 +14,45 @@ Meal Planner er et kommandolinjebasert Kotlin-prosjekt utviklet for å bestå Hy
   For å forhindre SQL-injeksjon og sikre korrekt ressursstyring, benyttes PreparedStatement med parameterplassholdere og Kotlin sin `use`-funksjon for automatisk lukking av ressurser.
 
 - **Modularitet og vedlikehold:**  
-  Ved å dele opp koden på denne måten blir prosjektet lettere å vedlikeholde, teste og videreutvikle. Designet legger til rette for fremtidige forbedringer som økt dynamikk i måltidstillegg og styrket inputvalidering.
+  Ved å dele opp koden på denne måten blir prosjektet lettere å vedlikeholde, teste og videreutvikle. 
+
+
+---
+
+## Komme i gang
+
+### Kloning
+
+For å klone prosjektet, kjør følgende kommando i terminalen:
+```
+git clone https://github.com/TorgrimRL/Meal-Planner-Kotlin.git
+```
+
+### Bygging
+
+Prosjektet bygges med Gradle Wrapper og er konfigurert for å kjøre med Java 21. I rotmappen, kjør:
+```
+./gradlew build
+```
+Dette kompilerer kildekoden og bygger en fat jar med alle runtime-avhengigheter. Fat jar-filen blir plassert i:
+```
+Meal Planner (Kotlin)/task/build/libs/
+```
+### Kjøring
+
+Siden prosjektet er interaktivt (det venter på brukerinput), anbefales det å kjøre den genererte fat jar-filen direkte i stedet for via ./gradlew run.
+
+Kjør fat jar-filen med:
+```
+java -jar "Meal Planner (Kotlin)/task/build/libs/Meal_Planner__Kotlin_-task.jar"
+```
+
+Når du kjører programmet, vil du få opp en melding som:
+```
+What would you like to do (add, show, plan, save, exit)?
+```
+og deretter kan du interaktivt gi input i terminalen.
+
 
 ## Mulige forbedringer
 
@@ -27,4 +65,3 @@ Meal Planner er et kommandolinjebasert Kotlin-prosjekt utviklet for å bestå Hy
 - **Styrket inputvalidering:**  
   Videre utvikling kan fokusere på  inputvalidering for å sikre at data alltid er korrekt formatert, noe som reduserer risikoen for feil og øker brukervennligheten.
 
----

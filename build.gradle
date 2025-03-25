@@ -62,6 +62,19 @@ subprojects {
     tasks.withType(JavaCompile) {
         options.encoding = 'utf-8'
     }
+    application {
+        mainClass.set("mealplanner.MainKt")
+    }
+
+    jar {
+        manifest {
+            attributes 'Main-Class': application.mainClass.get()
+        }
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    }
+
+
 }
 
 project(':util') {
